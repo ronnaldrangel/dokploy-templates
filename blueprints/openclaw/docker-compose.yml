@@ -1,6 +1,10 @@
 services:
   openclaw:
-    image: "coollabsio/openclaw:2026.2.6"
+    image: "coollabsio/openclaw:latest"
+    deploy:
+      resources:
+        limits:
+          memory: 2g
     environment:
       - AUTH_USERNAME=${AUTH_USERNAME}
       - AUTH_PASSWORD=${AUTH_PASSWORD}
