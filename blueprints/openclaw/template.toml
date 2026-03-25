@@ -8,6 +8,7 @@ auth_password = "${password:32}"
 serviceName = "openclaw"
 port = 8080
 host = "${domain}"
+certificate = true
 
 [config.env]
 OPENCLAW_GATEWAY_TOKEN = "${gateway_token}"

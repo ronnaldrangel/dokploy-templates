@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "Dokploy Templates Repository",
-  "type": "module",
   "scripts": {
     "process-meta": "node dedupe-and-sort-meta.js",
     "process-meta-verbose": "node dedupe-and-sort-meta.js --verbose",
