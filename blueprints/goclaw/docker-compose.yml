@@ -1,0 +1,59 @@
+version: "3.8"
+services:
+  goclaw:
+    image: ghcr.io/nextlevelbuilder/goclaw:latest
+    restart: always
+    environment:
+      - GOCLAW_HOST=0.0.0.0
+      - GOCLAW_PORT=18790
+      - GOCLAW_CONFIG=/app/data/config.json
+      - GOCLAW_GATEWAY_TOKEN=${GOCLAW_GATEWAY_TOKEN}
+      - GOCLAW_ENCRYPTION_KEY=${GOCLAW_ENCRYPTION_KEY}
+      - GOCLAW_POSTGRES_DSN=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?sslmode=disable
+      - GOCLAW_REDIS_DSN=redis://redis:6379/0
+    volumes:
+      - goclaw-data:/app/data
+      - goclaw-workspace:/app/workspace
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  goclaw-ui:
+    image: ghcr.io/nextlevelbuilder/goclaw-web:latest
+    restart: always
+    environment:
+      - VITE_BACKEND_HOST=${GOCLAW_API_DOMAIN}
+      - VITE_BACKEND_PORT=443
+      - VITE_WS_URL=wss://${GOCLAW_API_DOMAIN}/ws
+    depends_on:
+      - goclaw
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+
+volumes:
+  goclaw-data:
+  goclaw-workspace:
+  postgres-data:
+  redis-data:

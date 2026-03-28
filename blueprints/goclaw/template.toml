@@ -1,0 +1,28 @@
+[variables]
+gateway_token = "${password:32}"
+encryption_key = "${password:32}"
+postgres_user = "goclaw"
+postgres_password = "${password:32}"
+postgres_db = "goclaw"
+
+[config]
+env = [
+  "GOCLAW_GATEWAY_TOKEN=${gateway_token}",
+  "GOCLAW_ENCRYPTION_KEY=${encryption_key}",
+  "POSTGRES_USER=${postgres_user}",
+  "POSTGRES_PASSWORD=${postgres_password}",
+  "POSTGRES_DB=${postgres_db}",
+  "GOCLAW_API_DOMAIN=api.${domain}"
+]
+
+[[config.domains]]
+serviceName = "goclaw-ui"
+port = 80
+host = "${domain}"
+certificate = true
+
+[[config.domains]]
+serviceName = "goclaw"
+port = 18790
+host = "api.${domain}"
+certificate = true

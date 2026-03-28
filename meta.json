@@ -2811,6 +2811,26 @@
     ]
   },
   {
+    "id": "goclaw",
+    "name": "GoClaw",
+    "version": "latest",
+    "description": "GoClaw is a high-performance AI gateway and proxy designed to unify multiple LLM providers under a single API. It features built-in support for vector search via pgvector and caching with Redis.",
+    "logo": "goclaw.svg",
+    "links": {
+      "github": "https://github.com/nextlevelbuilder/goclaw",
+      "website": "https://github.com/nextlevelbuilder/goclaw",
+      "docs": "https://github.com/nextlevelbuilder/goclaw#readme"
+    },
+    "tags": [
+      "ai",
+      "gateway",
+      "proxy",
+      "llm",
+      "pgvector",
+      "redis"
+    ]
+  },
+  {
     "id": "gotenberg",
     "name": "Gotenberg",
     "version": "latest",
