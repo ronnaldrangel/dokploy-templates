@@ -1,0 +1,66 @@
+[variables]
+  [variables.node_env]
+    label = "Node Env"
+    defaultValue = "production"
+  [variables.mongodb_uri]
+    label = "MongoDB URI"
+    defaultValue = "mongodb://nexode-mongo:27017/nexode"
+  [variables.frontend_url]
+    label = "Frontend URL"
+    placeholder = "e.g., https://app.nexode.example.com"
+  [variables.api_prefix]
+    label = "API Prefix"
+    defaultValue = "api-v1"
+  [variables.jwt_secret]
+    label = "JWT Secret"
+    defaultValue = "${password:32}"
+  [variables.jwt_expires_in]
+    label = "JWT Expires In"
+    defaultValue = "7d"
+  [variables.graphql_path]
+    label = "GraphQL Path"
+    defaultValue = "/graphql"
+  [variables.graphql_playground]
+    label = "GraphQL Playground"
+    defaultValue = "true"
+  [variables.graphql_debug]
+    label = "GraphQL Debug"
+    defaultValue = "true"
+  [variables.stripe_secret_key]
+    label = "Stripe Secret Key"
+    placeholder = "sk_live_..."
+  [variables.stripe_webhook_secret]
+    label = "Stripe Webhook Secret"
+    placeholder = "whsec_..."
+  [variables.google_client_id]
+    label = "Google Client ID"
+    placeholder = "Enter your Google Client ID"
+  [variables.google_client_secret]
+    label = "Google Client Secret"
+    placeholder = "Enter your Google Client Secret"
+  [variables.email_host]
+    label = "Email Host"
+    placeholder = "e.g., smtp.gmail.com"
+  [variables.email_port]
+    label = "Email Port"
+    defaultValue = "587"
+  [variables.email_user]
+    label = "Email User"
+    placeholder = "Enter SMTP user"
+  [variables.email_pass]
+    label = "Email Pass"
+    placeholder = "Enter SMTP password"
+  [variables.email_from]
+    label = "Email From"
+    placeholder = "e.g., Nexode <noreply@example.com>"
+  [variables.base_domain]
+    label = "Base Domain"
+    placeholder = "e.g., nexode.example.com"
+  [variables.sentry_dsn]
+    label = "Sentry DSN"
+    placeholder = "Optional: Sentry DSN for error tracking"
+
+[[config.domains]]
+  name = "Backend Domain"
+  serviceName = "nexode-backend"
+  port = 4000

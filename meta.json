@@ -4349,6 +4349,24 @@
     ]
   },
   {
+    "id": "nexode-backend",
+    "name": "Nexode Backend",
+    "version": "latest",
+    "description": "Nexode Backend is a high-performance cloud management and orchestration platform. It allows users to host, scale, and manage n8n services and microservices with an integrated reverse proxy and Stripe billing.",
+    "logo": "logo.png",
+    "links": {
+      "github": "https://github.com/lucast1574/nexode-backend"
+    },
+    "tags": [
+      "orchestration",
+      "pnas",
+      "nestjs",
+      "mongodb",
+      "n8n",
+      "developer-tools"
+    ]
+  },
+  {
     "id": "nextcloud-aio",
     "name": "Nextcloud",
     "version": "stable",
