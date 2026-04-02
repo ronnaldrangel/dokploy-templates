@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   goclaw:
-    image: ghcr.io/nextlevelbuilder/goclaw:latest
+    image: ghcr.io/nextlevelbuilder/goclaw:latest-full
     restart: always
     environment:
       - GOCLAW_HOST=0.0.0.0
