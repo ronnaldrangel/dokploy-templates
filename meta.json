@@ -5239,6 +5239,21 @@
     ]
   },
   {
+    "id": "postgres-with-pgadmin",
+    "name": "Postgres with pgAdmin",
+    "version": "16",
+    "description": "PostgreSQL database with pgAdmin 4 for web-based access and management.",
+    "logo": "postgres-with-pgadmin.png",
+    "links": {
+      "website": "https://www.postgresql.org/",
+      "github": "https://github.com/postgres/postgres",
+      "docs": "https://www.postgresql.org/docs/"
+    },
+    "tags": [
+      "database"
+    ]
+  },
+  {
     "id": "postgresus",
     "name": "Postgresus",
     "version": "latest",

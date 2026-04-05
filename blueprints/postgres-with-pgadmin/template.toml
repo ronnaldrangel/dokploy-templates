@@ -1,0 +1,20 @@
+[variables]
+main_domain = "${domain}"
+pgadmin_email = "admin@example.com"
+pgadmin_password = "${password:16}"
+postgres_user = "admin"
+postgres_password = "${password:16}"
+postgres_db = "dokploy_db"
+
+[config]
+[[config.domains]]
+serviceName = "postgres-with-pgadmin"
+port = 80
+host = "${main_domain}"
+
+[config.env]
+PGADMIN_DEFAULT_EMAIL = "${pgadmin_email}"
+PGADMIN_DEFAULT_PASSWORD = "${pgadmin_password}"
+POSTGRES_USER = "${postgres_user}"
+POSTGRES_PASSWORD = "${postgres_password}"
+POSTGRES_DB = "${postgres_db}"
