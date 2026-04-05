@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="readthedocs-addons-api-version" content="1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="PostgREST Documentation" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.postgrest.org/en/stable/index.html" />
+<meta property="og:site_name" content="PostgREST 14" />
+<meta property="og:description" content=", PostgREST is a standalone web server that turns your PostgreSQL database directly into a RESTful API. The structural constraints and permissions in the database determine the API endpoints and operations. Sponsors:,, Database as Single Source of Truth: Using PostgREST is an alternative to manua..." />
+<meta property="og:image" content="https://docs.postgrest.org/en/stable/_images/postgrest.png" />
+<meta property="og:image:alt" content="PostgREST 14" />
+<meta name="description" content=", PostgREST is a standalone web server that turns your PostgreSQL database directly into a RESTful API. The structural constraints and permissions in the database determine the API endpoints and operations. Sponsors:,, Database as Single Source of Truth: Using PostgREST is an alternative to manua..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostgREST Documentation &mdash; PostgREST 14  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c2c0849b" />
+      <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="canonical" href="https://docs.postgrest.org/en/stable/index.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+      <script src="_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/js/versions.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial 0 - Get it Running" href="tutorials/tut0.html" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="postgrest" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            PostgREST 14
+          </a>
+              <div class="switch-menus">
+                <div class="version-switch"></div>
+                <div class="language-switch"></div>
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tut0.html">Tutorial 0 - Get it Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tut1.html">Tutorial 1 - The Golden Key</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references/auth.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/connection_pool.html">Connection Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/schema_cache.html">Schema Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/errors.html">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/observability.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/admin_server.html">Admin Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/listener.html">Listener</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Explanations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="explanations/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/db_authz.html">Database Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/external_auth.html">External Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/schema_isolation.html">Schema Isolation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-to guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/sql-user-management.html">SQL User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/sql-user-management-using-postgres-users-and-passwords.html">SQL User Management using postgres’ users and passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/working-with-postgresql-data-types.html">Working with PostgreSQL data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/create-soap-endpoint.html">Create a SOAP endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/providing-html-content-using-htmx.html">Providing HTML Content Using Htmx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/providing-images-for-img.html">Providing images for <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Integrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="integrations/pg-safeupdate.html">pg-safeupdate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrations/systemd.html">systemd</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html">Community Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#templates">Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#example-apps">Example Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#devops">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#external-notification">External Notification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#extensions">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#client-side-libraries">Client-Side Libraries</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">PostgREST 14</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">PostgREST Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="postgrest-documentation">
+<h1>PostgREST Documentation<a class="headerlink" href="#postgrest-documentation" title="Link to this heading"></a></h1>
+<div class="image-container docutils container">
+<figure class="align-default">
+<img alt="_images/postgrest.png" src="_images/postgrest.png" />
+</figure>
+</div>
+<a class="reference external image-reference" href="https://github.com/PostgREST/postgrest"><img alt="https://img.shields.io/github/stars/postgrest/postgrest.svg?style=social" src="https://img.shields.io/github/stars/postgrest/postgrest.svg?style=social" />
+</a>
+<a class="reference external image-reference" href="https://github.com/PostgREST/postgrest/releases"><img alt="https://img.shields.io/github/v/release/PostgREST/postgrest.svg" src="https://img.shields.io/github/v/release/PostgREST/postgrest.svg" />
+</a>
+<a class="reference external image-reference" href="https://hub.docker.com/r/postgrest/postgrest/"><img alt="https://img.shields.io/docker/pulls/postgrest/postgrest.svg" src="https://img.shields.io/docker/pulls/postgrest/postgrest.svg" />
+</a>
+<a class="reference external image-reference" href="https://www.patreon.com/postgrest"><img alt="https://img.shields.io/badge/Donate-Patreon-orange.svg?colorB=F96854" src="https://img.shields.io/badge/Donate-Patreon-orange.svg?colorB=F96854" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>PostgREST is a standalone web server that turns your PostgreSQL database directly into a RESTful API. The structural constraints and permissions in the database determine the API endpoints and operations.</p>
+<section id="sponsors">
+<h2>Sponsors<a class="headerlink" href="#sponsors" title="Link to this heading"></a></h2>
+<div class="image-container docutils container">
+<div class="img-dark docutils container">
+<a class="reference external image-reference" href="https://www.cybertec-postgresql.com/en/?utm_source=postgrest.org&amp;utm_medium=referral&amp;utm_campaign=postgrest"><img alt="_images/cybertec-dark.svg" src="_images/cybertec-dark.svg" />
+</a>
+</div>
+<div class="img-light docutils container">
+<a class="reference external image-reference" href="https://www.cybertec-postgresql.com/en/?utm_source=postgrest.org&amp;utm_medium=referral&amp;utm_campaign=postgrest"><img alt="_images/cybertec.svg" src="_images/cybertec.svg" />
+</a>
+</div>
+<div class="img-dark docutils container">
+<a class="reference external image-reference" href="https://supabase.com/?utm_source=postgrest%20backers&amp;utm_medium=open%20source%20partner&amp;utm_campaign=postgrest%20backers%20github&amp;utm_term=homepage"><img alt="_images/supabase-dark.svg" src="_images/supabase-dark.svg" />
+</a>
+</div>
+<div class="img-light docutils container">
+<a class="reference external image-reference" href="https://supabase.com/?utm_source=postgrest%20backers&amp;utm_medium=open%20source%20partner&amp;utm_campaign=postgrest%20backers%20github&amp;utm_term=homepage"><img alt="_images/supabase.svg" src="_images/supabase.svg" />
+</a>
+</div>
+<div class="img-dark docutils container">
+<a class="reference external image-reference" href="https://www.euronodes.com/postgrest"><img alt="_images/euronodes.svg" src="_images/euronodes.svg" />
+</a>
+</div>
+<div class="img-light docutils container">
+<a class="reference external image-reference" href="https://www.euronodes.com/postgrest"><img alt="_images/euronodes.svg" src="_images/euronodes.svg" />
+</a>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="img-dark docutils container">
+<a class="reference external image-reference" href="https://neon.com/?utm_source=sponsor&amp;utm_campaign=postgrest"><img alt="_images/neon-dark.jpg" src="_images/neon-dark.jpg" />
+</a>
+</div>
+<div class="img-light docutils container">
+<a class="reference external image-reference" href="https://neon.com/?utm_source=sponsor&amp;utm_campaign=postgrest"><img alt="_images/neon.jpg" src="_images/neon.jpg" />
+</a>
+</div>
+<div class="img-dark docutils container">
+<a class="reference external image-reference" href="https://www.bytebase.com/?utm_source=sponsor&amp;utm_campaign=postgrest"><img alt="_images/bytebase-dark.svg" src="_images/bytebase-dark.svg" />
+</a>
+</div>
+<div class="img-light docutils container">
+<a class="reference external image-reference" href="https://www.bytebase.com/?utm_source=sponsor&amp;utm_campaign=postgrest"><img alt="_images/bytebase.svg" src="_images/bytebase.svg" />
+</a>
+</div>
+<a class="reference external image-reference" href="#sponsors"><img alt="_images/empty.png" src="_images/empty.png" />
+</a>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="database-as-single-source-of-truth">
+<h2>Database as Single Source of Truth<a class="headerlink" href="#database-as-single-source-of-truth" title="Link to this heading"></a></h2>
+<p>Using PostgREST is an alternative to manual CRUD programming. Custom API servers suffer problems. Writing business logic often duplicates, ignores or hobbles database structure. Object-relational mapping is a leaky abstraction leading to slow imperative code. The PostgREST philosophy establishes a single declarative source of truth: the data itself.</p>
+</section>
+<section id="declarative-programming">
+<h2>Declarative Programming<a class="headerlink" href="#declarative-programming" title="Link to this heading"></a></h2>
+<p>It’s easier to ask PostgreSQL to join data for you and let its query planner figure out the details than to loop through rows yourself. It’s easier to assign permissions to database objects than to add guards in controllers. (This is especially true for cascading permissions in data dependencies.) It’s easier to set constraints than to litter code with sanity checks.</p>
+</section>
+<section id="leak-proof-abstraction">
+<h2>Leak-proof Abstraction<a class="headerlink" href="#leak-proof-abstraction" title="Link to this heading"></a></h2>
+<p>There is no ORM involved. Creating new views happens in SQL with known performance implications. A database administrator can now create an API from scratch with no custom programming.</p>
+</section>
+<section id="one-thing-well">
+<h2>One Thing Well<a class="headerlink" href="#one-thing-well" title="Link to this heading"></a></h2>
+<p>PostgREST has a focused scope. It works well with other tools like Nginx. This forces you to cleanly separate the data-centric CRUD operations from other concerns. Use a collection of sharp tools rather than building a big ball of mud.</p>
+</section>
+<section id="getting-support">
+<h2>Getting Support<a class="headerlink" href="#getting-support" title="Link to this heading"></a></h2>
+<p>The project has a friendly and growing community. For discussions, use the Github <a class="reference external" href="https://github.com/PostgREST/postgrest/discussions">discussions page</a>. You can also report or search for bugs/features on the Github <a class="reference external" href="https://github.com/PostgREST/postgrest/issues">issues</a> page.</p>
+</section>
+<section id="releases">
+<h2>Releases<a class="headerlink" href="#releases" title="Link to this heading"></a></h2>
+<p>PostgREST follows <code class="docutils literal notranslate"><span class="pre">MAJOR.PATCH</span></code> two-part versioning:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MAJOR</span></code>: feature release, may deprecate or remove things.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PATCH</span></code>: fix/security release only; no features, no behavior changes.</p></li>
+</ul>
+<p>Starting from <code class="docutils literal notranslate"><span class="pre">v14.0</span></code>, only even-numbered MAJOR versions will be released, reserving odd-numbered MAJOR versions for development.</p>
+<p>All the releases are published on <a class="reference external" href="https://github.com/PostgREST/postgrest/releases">PostgREST’s GitHub release page</a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading"></a></h2>
+<p>Are you new to PostgREST? This is the place to start!</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tut0.html">Tutorial 0 - Get it Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tut1.html">Tutorial 1 - The Golden Key</a></li>
+</ul>
+</div>
+<p>Also have a look at <a class="reference internal" href="explanations/install.html#install"><span class="std std-ref">Installation</span></a> and <a class="reference internal" href="ecosystem.html#community-tutorials"><span class="std std-ref">Community Tutorials</span></a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<p>Technical references for PostgREST’s functionality.</p>
+<div class="toctree-wrapper compound" id="id1">
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references/auth.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/connection_pool.html">Connection Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/schema_cache.html">Schema Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/errors.html">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/observability.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/admin_server.html">Admin Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/listener.html">Listener</a></li>
+</ul>
+</div>
+</section>
+<section id="explanations">
+<h2>Explanations<a class="headerlink" href="#explanations" title="Link to this heading"></a></h2>
+<p>Key concepts in PostgREST.</p>
+<div class="toctree-wrapper compound" id="id2">
+<p class="caption" role="heading"><span class="caption-text">Explanations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="explanations/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/db_authz.html">Database Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/external_auth.html">External Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanations/schema_isolation.html">Schema Isolation</a></li>
+</ul>
+</div>
+</section>
+<section id="how-tos">
+<h2>How-tos<a class="headerlink" href="#how-tos" title="Link to this heading"></a></h2>
+<p>Recipes that’ll help you address specific use-cases.</p>
+<div class="toctree-wrapper compound" id="id3">
+<p class="caption" role="heading"><span class="caption-text">How-to guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/sql-user-management.html">SQL User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/sql-user-management-using-postgres-users-and-passwords.html">SQL User Management using postgres’ users and passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/working-with-postgresql-data-types.html">Working with PostgreSQL data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/create-soap-endpoint.html">Create a SOAP endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/providing-html-content-using-htmx.html">Providing HTML Content Using Htmx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-tos/providing-images-for-img.html">Providing images for <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code></a></li>
+</ul>
+</div>
+</section>
+<section id="integrations">
+<span id="intgrs"></span><h2>Integrations<a class="headerlink" href="#integrations" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound" id="id4">
+<p class="caption" role="heading"><span class="caption-text">Integrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="integrations/pg-safeupdate.html">pg-safeupdate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrations/systemd.html">systemd</a></li>
+</ul>
+</div>
+</section>
+<section id="ecosystem">
+<h2>Ecosystem<a class="headerlink" href="#ecosystem" title="Link to this heading"></a></h2>
+<p>PostgREST has a growing ecosystem of examples, libraries, and experiments. Here is a selection.</p>
+<div class="toctree-wrapper compound" id="id5">
+<p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html">Community Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#templates">Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#example-apps">Example Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#devops">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#external-notification">External Notification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#extensions">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html#client-side-libraries">Client-Side Libraries</a></li>
+</ul>
+</div>
+</section>
+<section id="in-production">
+<h2>In Production<a class="headerlink" href="#in-production" title="Link to this heading"></a></h2>
+<p>Here are some companies that use PostgREST in production.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.catarse.me">Catarse</a></p></li>
+<li><p><a class="reference external" href="https://www.dripdepot.com">Drip Depot</a></p></li>
+<li><p><a class="reference external" href="https://www.image-charts.com">Image-charts</a></p></li>
+<li><p><a class="reference external" href="https://www.netwo.io">Netwo</a></p></li>
+<li><p><a class="reference external" href="https://www.nimbusfacility.com/sg/home">Nimbus</a>
+- See how Nimbus uses PostgREST in <a class="reference external" href="https://paul.copplest.one/blog/nimbus-tech-2019-04.html">Paul Copplestone’s blog post</a>.</p></li>
+<li><p><a class="reference external" href="https://openbooking.ch">OpenBooking</a></p></li>
+<li><p><a class="reference external" href="https://supabase.com">Supabase</a></p></li>
+</ul>
+</section>
+<section id="testimonials">
+<h2>Testimonials<a class="headerlink" href="#testimonials" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>“It’s so fast to develop, it feels like cheating!”</p>
+<p class="attribution">—François-Guillaume Ribreau</p>
+</div></blockquote>
+<blockquote>
+<div><p>“I just have to say that, the CPU/Memory usage compared to our
+Node.js/Waterline ORM based API is ridiculous.  It’s hard to even push
+it over 60/70 MB while our current API constantly hits 1GB running on 6
+instances (dynos).”</p>
+<p class="attribution">—Louis Brauer</p>
+</div></blockquote>
+<blockquote>
+<div><p>“I really enjoyed the fact that all of a sudden I was writing
+microservices in SQL DDL (and v8 JavaScript functions). I dodged so
+much boilerplate. The next thing I knew, we pulled out a full rewrite
+of a Spring+MySQL legacy app in 6 months. Literally 10x faster, and
+code was super concise. The old one took 3 years and a team of 4
+people to develop.”</p>
+<p class="attribution">—Simone Scarduzio</p>
+</div></blockquote>
+<blockquote>
+<div><p>“I like the fact that PostgREST does one thing, and one thing well.
+While PostgREST takes care of bridging the gap between our HTTP server
+and PostgreSQL database, we can focus on the development of our API in
+a single language: SQL. This puts the database in the center of our
+architecture, and pushed us to improve our skills in SQL programming
+and database design.”</p>
+<p class="attribution">—Eric Bréchemier, Data Engineer, eGull SAS</p>
+</div></blockquote>
+<blockquote>
+<div><p>“PostgREST is performant, stable, and transparent. It allows us to
+bootstrap projects really fast, and to focus on our data and application
+instead of building out the ORM layer. In our k8s cluster, we run a few
+pods per schema we want exposed, and we scale up/down depending on demand.
+Couldn’t be happier.”</p>
+<p class="attribution">—Anupam Garg, Datrium, Inc.</p>
+</div></blockquote>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h2>
+<p>Please see the <a class="reference external" href="https://github.com/PostgREST/postgrest/blob/main/CONTRIBUTING.md">Contributing guidelines</a> in the main PostgREST repository.</p>
+<script type="text/javascript">
+  let hash = window.location.hash;
+
+  const redirects = {
+    // Tables and Views
+    '#release-notes': '#releases',
+  };
+
+  let willRedirectTo = redirects[hash];
+
+  if (willRedirectTo) {
+    window.location.href = willRedirectTo;
+  }
+</script></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorials/tut0.html" class="btn btn-neutral float-right" title="Tutorial 0 - Get it Running" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017, Joe Nelson, Steve Chavez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

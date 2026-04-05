@@ -1,20 +1,20 @@
 [variables]
 main_domain = "${domain}"
-pgadmin_email = "admin@example.com"
-pgadmin_password = "${password:16}"
 postgres_user = "admin"
 postgres_password = "${password:16}"
 postgres_db = "dokploy_db"
+anon_role = "web_anon"
+db_schema = "public"
 
 [config]
 [[config.domains]]
-serviceName = "postgres-with-pgadmin"
-port = 80
+serviceName = "postgres-with-postgrest"
+port = 3000
 host = "${main_domain}"
 
 [config.env]
-PGADMIN_DEFAULT_EMAIL = "${pgadmin_email}"
-PGADMIN_DEFAULT_PASSWORD = "${pgadmin_password}"
 POSTGRES_USER = "${postgres_user}"
 POSTGRES_PASSWORD = "${postgres_password}"
 POSTGRES_DB = "${postgres_db}"
+PGRST_DB_SCHEMA = "${db_schema}"
+PGRST_DB_ANON_ROLE = "${anon_role}"

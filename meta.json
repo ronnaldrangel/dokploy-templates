@@ -5239,18 +5239,20 @@
     ]
   },
   {
-    "id": "postgres-with-pgadmin",
-    "name": "Postgres with pgAdmin",
-    "version": "16",
-    "description": "PostgreSQL database with pgAdmin 4 for web-based access and management.",
-    "logo": "postgres-with-pgadmin.png",
+    "id": "postgres-with-postgrest",
+    "name": "Postgres with PostgREST",
+    "version": "latest",
+    "description": "PostgreSQL database with PostgREST for a fully RESTful HTTP API.",
+    "logo": "postgres-with-postgrest.png",
     "links": {
-      "website": "https://www.postgresql.org/",
-      "github": "https://github.com/postgres/postgres",
-      "docs": "https://www.postgresql.org/docs/"
+      "website": "https://postgrest.org/",
+      "github": "https://github.com/PostgREST/postgrest",
+      "docs": "https://postgrest.org/en/stable/"
     },
     "tags": [
-      "database"
+      "database",
+      "api",
+      "rest"
     ]
   },
   {

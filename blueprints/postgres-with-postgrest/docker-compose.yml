@@ -1,16 +1,13 @@
 version: "3.8"
 
 services:
-  postgres-with-pgadmin:
-    image: dpage/pgadmin4:8.4
+  postgres-with-postgrest:
+    image: postgrest/postgrest:latest
     restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
-      PGADMIN_CONFIG_SERVER_MODE: "False"
-      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
+      PGRST_DB_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      PGRST_DB_SCHEMA: ${PGRST_DB_SCHEMA}
+      PGRST_DB_ANON_ROLE: ${PGRST_DB_ANON_ROLE}
     depends_on:
       postgres:
         condition: service_healthy
@@ -31,5 +28,4 @@ services:
       retries: 5
 
 volumes:
-  pgadmin-data:
   postgres-data:
