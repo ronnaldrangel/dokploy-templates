@@ -2583,6 +2583,22 @@
     ]
   },
   {
+    "id": "fzap",
+    "name": "FZAP",
+    "version": "latest",
+    "description": "API baseada em Whatsmeow (Go) para automação de WhatsApp e integrações nativas como n8n.",
+    "links": {
+      "website": "https://flouds.com.br/produtos/fzap",
+      "docs": "https://flouds.com.br/produtos/fzap/docs"
+    },
+    "logo": "fzap.svg",
+    "tags": [
+      "whatsapp",
+      "api",
+      "automation"
+    ]
+  },
+  {
     "id": "garage",
     "name": "Garage S3",
     "version": "latest",

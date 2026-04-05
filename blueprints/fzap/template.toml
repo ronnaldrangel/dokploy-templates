@@ -1,0 +1,23 @@
+[variables]
+fzap_domain = "${domain}"
+admin_token = "${password:32}"
+postgres_user = "fzap_user"
+postgres_password = "${password:32}"
+postgres_db = "fzap"
+fzap_language = "pt-BR"
+generic_timezone = "America/Sao_Paulo"
+
+[config]
+[[config.domains]]
+serviceName = "fzap"
+port = 8080
+host = "${fzap_domain}"
+
+[config.env]
+FZAP_DOMAIN = "${fzap_domain}"
+ADMIN_TOKEN = "${admin_token}"
+POSTGRES_USER = "${postgres_user}"
+POSTGRES_PASSWORD = "${postgres_password}"
+POSTGRES_DB = "${postgres_db}"
+FZAP_LANGUAGE = "${fzap_language}"
+GENERIC_TIMEZONE = "${generic_timezone}"
