@@ -8,6 +8,7 @@ postgres_db = "n8n"
 n8n_encryption_key = "${base64:64}"
 
 [config]
+isolated = false
 mounts = []
 
 [[config.domains]]

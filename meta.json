@@ -2583,6 +2583,22 @@
     ]
   },
   {
+    "id": "fzap",
+    "name": "FZAP",
+    "version": "latest",
+    "description": "API baseada em Whatsmeow (Go) para automação de WhatsApp e integrações nativas como n8n.",
+    "links": {
+      "website": "https://flouds.com.br/produtos/fzap",
+      "docs": "https://flouds.com.br/produtos/fzap/docs"
+    },
+    "logo": "fzap.svg",
+    "tags": [
+      "whatsapp",
+      "api",
+      "automation"
+    ]
+  },
+  {
     "id": "garage",
     "name": "Garage S3",
     "version": "latest",
@@ -5232,6 +5248,21 @@
       "pooler",
       "proxy",
       "load-balancer"
+    ]
+  },
+  {
+    "id": "postgres-public",
+    "name": "Postgres (TCP SNI)",
+    "version": "16",
+    "description": "PostgreSQL database configured with Traefik TCP SNI over port 443 for public direct connections.",
+    "logo": "postgres-public.png",
+    "links": {
+      "website": "https://www.postgresql.org/",
+      "github": "https://github.com/postgres/postgres",
+      "docs": "https://www.postgresql.org/docs/"
+    },
+    "tags": [
+      "database"
     ]
   },
   {
