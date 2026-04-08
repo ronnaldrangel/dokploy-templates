@@ -3,6 +3,7 @@ services:
   openclaw:
     image: ghcr.io/openclaw/openclaw:latest
     restart: always
+    user: root
     environment:
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN}
       - OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=${OPENCLAW_ALLOW_INSECURE_PRIVATE_WS:-}
@@ -17,16 +18,11 @@ services:
       - openclaw-workspace:/home/node/.openclaw/workspace
     # No se requiere 'ports' ni 'expose' explícito; Traefik redirige al puerto 18789 configurado en el template.toml
     command:
-      [
-        "node",
-        "dist/index.js",
-        "gateway",
-        "--bind",
-        "lan",
-        "--port",
-        "18789",
-        "--allow-unconfigured",
-      ]
+      - sh
+      - -c
+      - |
+        chown -R 1000:1000 /home/node/.openclaw && \
+        exec node dist/index.js gateway --bind lan --port 18789 --allow-unconfigured
     healthcheck:
       test:
         [
