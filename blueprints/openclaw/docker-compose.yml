@@ -13,9 +13,7 @@ services:
     volumes:
       - openclaw-config:/home/node/.openclaw
       - openclaw-workspace:/home/node/.openclaw/workspace
-    expose:
-      - "18789"
-      - "18790"
+    # No se requiere 'ports' ni 'expose' explícito; Traefik redirige al puerto 18789 configurado en el template.toml
     command:
       [
         "node",
@@ -25,6 +23,7 @@ services:
         "lan",
         "--port",
         "18789",
+        "--allow-unconfigured",
       ]
     healthcheck:
       test:
