@@ -16,7 +16,7 @@ OPENCLAW_ALLOW_INSECURE_PRIVATE_WS = ""
 # Headless & Automation
 OPENCLAW_ALLOW_UNCONFIGURED = "true"
 OPENCLAW_GATEWAY_MODE = "local"
-OPENCLAW_GATEWAY_CONTROL_UI_ALLOWED_ORIGINS = "https://${domain},http://${domain}"
+OPENCLAW_GATEWAY_CONTROL_UI_DANGEROUSLY_ALLOW_HOST_HEADER_ORIGIN_FALLBACK = "true"
 
 # Claude Integrations (Optional)
 # Get session keys from browser cookies
