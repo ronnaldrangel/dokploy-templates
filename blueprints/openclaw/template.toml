@@ -3,15 +3,19 @@ gateway_token = "${password:32}"
 
 [config]
 [[config.domains]]
-serviceName = "openclaw"
-port = 18789
-host = "${domain}"
-certificate = true
+  serviceName = "openclaw"
+  port = 18789
+  host = "${domain}"
+  certificate = true
 
 [config.env]
 # Security
 OPENCLAW_GATEWAY_TOKEN = "${gateway_token}"
 OPENCLAW_ALLOW_INSECURE_PRIVATE_WS = ""
+
+# Headless & Automation
+OPENCLAW_ALLOW_UNCONFIGURED = "true"
+OPENCLAW_GATEWAY_MODE = "local"
 
 # Claude Integrations (Optional)
 # Get session keys from browser cookies
