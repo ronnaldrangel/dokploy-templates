@@ -1,22 +1,23 @@
 [variables]
 gateway_token = "${password:32}"
-auth_username = "dokploy"
-auth_password = "${password:32}"
 
 [config]
 [[config.domains]]
 serviceName = "openclaw"
-port = 8080
+port = 18789
 host = "${domain}"
 certificate = true
 
 [config.env]
+# Security
 OPENCLAW_GATEWAY_TOKEN = "${gateway_token}"
-OPENCLAW_GATEWAY_PORT = 18789
-AUTH_USERNAME="${auth_username}"
-AUTH_PASSWORD="${auth_password}"
-OPENCLAW_BRIDGE_PORT = 18790
-OPENCLAW_GATEWAY_BIND="lan"
-OPENCLAW_PLUGINS="discord,memory-core"
-# Get here https://openrouter.ai/
-OPENROUTER_API_KEY="YOUR-API-KEY"
+OPENCLAW_ALLOW_INSECURE_PRIVATE_WS = ""
+
+# Claude Integrations (Optional)
+# Get session keys from browser cookies
+CLAUDE_AI_SESSION_KEY = ""
+CLAUDE_WEB_SESSION_KEY = ""
+CLAUDE_WEB_COOKIE = ""
+
+# System
+OPENCLAW_TZ = "UTC"

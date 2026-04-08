@@ -4653,8 +4653,8 @@
   {
     "id": "openclaw",
     "name": "Openclaw",
-    "version": "latest",
-    "description": "WhatsApp gateway CLI with Pi RPC agent - self-hosted AI-powered messaging platform",
+    "version": "v2026.4.8",
+    "description": "Openclaw is an open-source personal AI assistant platform designed to run on any OS.",
     "logo": "openclaw.svg",
     "links": {
       "github": "https://github.com/openclaw/openclaw",
@@ -4662,13 +4662,9 @@
       "docs": "https://docs.openclaw.ai/"
     },
     "tags": [
-      "whatsapp",
       "ai",
-      "messaging",
-      "chatbot",
-      "gateway",
-      "self-hosted",
-      "automation"
+      "assistant",
+      "chatbot"
     ]
   },
   {
