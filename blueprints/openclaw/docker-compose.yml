@@ -5,6 +5,7 @@ services:
     restart: always
     user: root
     environment:
+      - OPENCLAW_DOMAIN=${OPENCLAW_DOMAIN:-}
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN}
       - OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=${OPENCLAW_ALLOW_INSECURE_PRIVATE_WS:-}
       - OPENCLAW_ALLOW_UNCONFIGURED=${OPENCLAW_ALLOW_UNCONFIGURED:-true}
@@ -22,6 +23,8 @@ services:
       - sh
       - -c
       - |
+        node dist/index.js config set gateway.controlUi.allowedOrigins "[\"https://$$OPENCLAW_DOMAIN\", \"http://$$OPENCLAW_DOMAIN\", \"*\"]" --strict-json && \
+        node dist/index.js config set gateway.controlUi.allowInsecureAuth true --strict-json && \
         chown -R 1000:1000 /home/node/.openclaw && \
         exec node dist/index.js gateway --bind lan --port 18789 --allow-unconfigured
     healthcheck:

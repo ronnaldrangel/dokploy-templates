@@ -9,6 +9,7 @@ gateway_token = "${password:32}"
   certificate = true
 
 [config.env]
+OPENCLAW_DOMAIN = "${domain}"
 # Security
 OPENCLAW_GATEWAY_TOKEN = "${gateway_token}"
 OPENCLAW_ALLOW_INSECURE_PRIVATE_WS = ""
