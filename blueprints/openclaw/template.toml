@@ -8,7 +8,6 @@ auth_password = "${password:32}"
   serviceName = "openclaw"
   port = 8080
   host = "${domain}"
-  certificate = true
 
 [config.env]
 # Identity & Auth
@@ -16,25 +15,15 @@ OPENCLAW_GATEWAY_TOKEN = "${gateway_token}"
 OPENCLAW_GATEWAY_PORT = 18789
 AUTH_USERNAME = "${auth_username}"
 AUTH_PASSWORD = "${auth_password}"
-OPENCLAW_ALLOWED_ORIGINS = "https://${domain},http://${domain}"
+OPENCLAW_ALLOWED_ORIGINS = "*"
+
+# AI Providers
+OPENROUTER_API_KEY = "YOUR-API-KEY"
 
 # Network
 OPENCLAW_BRIDGE_PORT = 18790
 OPENCLAW_GATEWAY_BIND = "lan"
 OPENCLAW_DOMAIN = "${domain}"
 
-# AI Providers
-OPENROUTER_API_KEY = "YOUR-API-KEY"
-
 # Extensions & Plugins
 OPENCLAW_PLUGINS = "discord,memory-core"
-
-# Browser Settings
-BROWSER_DEFAULT_PROFILE = "openclaw"
-BROWSER_EVALUATE_ENABLED = "true"
-BROWSER_SNAPSHOT_MODE = "efficient"
-BROWSER_REMOTE_TIMEOUT_MS = "1500"
-BROWSER_REMOTE_HANDSHAKE_TIMEOUT_MS = "3000"
-
-# System
-OPENCLAW_TZ = "UTC"

@@ -14,7 +14,7 @@ services:
       - OPENCLAW_GATEWAY_BIND=${OPENCLAW_GATEWAY_BIND:-loopback}
       - OPENCLAW_STATE_DIR=/data/.openclaw
       - OPENCLAW_WORKSPACE_DIR=/data/workspace
-      - BROWSER_CDP_URL=http://browser:18788
+      - BROWSER_CDP_URL=http://browser:9223
       - BROWSER_DEFAULT_PROFILE=${BROWSER_DEFAULT_PROFILE:-openclaw}
       - BROWSER_EVALUATE_ENABLED=${BROWSER_EVALUATE_ENABLED:-true}
       - BROWSER_SNAPSHOT_MODE=${BROWSER_SNAPSHOT_MODE:-efficient}
@@ -45,7 +45,7 @@ services:
       - browser-data:/config
     shm_size: 2g
     healthcheck:
-      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/18788' || exit 1"]
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/9222' || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 10
