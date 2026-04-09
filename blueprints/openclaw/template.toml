@@ -19,7 +19,6 @@ OPENROUTER_API_KEY = "YOUR-API-KEY"
 # Network
 OPENCLAW_BRIDGE_PORT = 18790
 OPENCLAW_GATEWAY_BIND = "lan"
-OPENCLAW_DOMAIN = "${domain}"
 
 # Extensions & Plugins
 OPENCLAW_PLUGINS = "discord,memory-core"
