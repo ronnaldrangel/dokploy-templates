@@ -27,3 +27,6 @@ OPENCLAW_DOMAIN = "${domain}"
 
 # Extensions & Plugins
 OPENCLAW_PLUGINS = "discord,memory-core"
+
+# System Config (Disable Pairing)
+OPENCLAW_CONFIG_JSON = '{"gateway":{"controlUi":{"allowInsecureAuth":true,"dangerouslyDisableDeviceAuth":true}}}'
