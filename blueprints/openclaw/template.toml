@@ -1,5 +1,7 @@
 [variables]
 gateway_token = "${password:32}"
+auth_username = "dokploy"
+auth_password = "${password:32}"
 
 [config]
 [[config.domains]]
@@ -9,44 +11,23 @@ gateway_token = "${password:32}"
   certificate = true
 
 [config.env]
-OPENCLAW_DOMAIN = "${domain}"
-# Security
-AUTH_USERNAME = "admin"
-AUTH_PASSWORD = "${password:16}"
+# Identity & Auth
 OPENCLAW_GATEWAY_TOKEN = "${gateway_token}"
-OPENCLAW_ALLOWED_ORIGINS = "https://${domain},http://${domain},http://localhost:5173"
+OPENCLAW_GATEWAY_PORT = 18789
+AUTH_USERNAME = "${auth_username}"
+AUTH_PASSWORD = "${auth_password}"
+OPENCLAW_ALLOWED_ORIGINS = "https://${domain},http://${domain}"
+
+# Network
+OPENCLAW_BRIDGE_PORT = 18790
+OPENCLAW_GATEWAY_BIND = "lan"
+OPENCLAW_DOMAIN = "${domain}"
 
 # AI Providers
-ANTHROPIC_API_KEY = ""
-OPENAI_API_KEY = ""
-OPENROUTER_API_KEY = ""
-GEMINI_API_KEY = ""
-XAI_API_KEY = ""
-GROQ_API_KEY = ""
-MISTRAL_API_KEY = ""
-CEREBRAS_API_KEY = ""
-VENICE_API_KEY = ""
-MOONSHOT_API_KEY = ""
-KIMI_API_KEY = ""
-MINIMAX_API_KEY = ""
-ZAI_API_KEY = ""
-AI_GATEWAY_API_KEY = ""
-OPENCODE_API_KEY = ""
-SYNTHETIC_API_KEY = ""
-COPILOT_GITHUB_TOKEN = ""
-XIAOMI_API_KEY = ""
-OPENCLAW_PRIMARY_MODEL = ""
-DEEPGRAM_API_KEY = ""
+OPENROUTER_API_KEY = "YOUR-API-KEY"
 
-# AWS / Bedrock
-AWS_ACCESS_KEY_ID = ""
-AWS_SECRET_ACCESS_KEY = ""
-AWS_REGION = "us-east-1"
-AWS_SESSION_TOKEN = ""
-BEDROCK_PROVIDER_FILTER = "anthropic"
-
-# Ollama
-OLLAMA_BASE_URL = ""
+# Extensions & Plugins
+OPENCLAW_PLUGINS = "discord,memory-core"
 
 # Browser Settings
 BROWSER_DEFAULT_PROFILE = "openclaw"
@@ -55,19 +36,5 @@ BROWSER_SNAPSHOT_MODE = "efficient"
 BROWSER_REMOTE_TIMEOUT_MS = "1500"
 BROWSER_REMOTE_HANDSHAKE_TIMEOUT_MS = "3000"
 
-# Hooks & Extra
-HOOKS_ENABLED = "false"
-HOOKS_PATH = "/hooks"
-MOONSHOT_BASE_URL = "https://api.moonshot.ai/v1"
-KIMI_BASE_URL = "https://api.moonshot.ai/anthropic"
-
-# Channels
-TELEGRAM_BOT_TOKEN = ""
-DISCORD_BOT_TOKEN = ""
-SLACK_BOT_TOKEN = ""
-SLACK_APP_TOKEN = ""
-WHATSAPP_ENABLED = "false"
-
 # System
-OPENCLAW_DOCKER_APT_PACKAGES = ""
 OPENCLAW_TZ = "UTC"
