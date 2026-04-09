@@ -1,7 +1,5 @@
 [variables]
 gateway_token = "${password:32}"
-auth_username = "dokploy"
-auth_password = "${password:32}"
 
 [config]
 [[config.domains]]
@@ -13,8 +11,6 @@ auth_password = "${password:32}"
 # Identity & Auth
 OPENCLAW_GATEWAY_TOKEN = "${gateway_token}"
 OPENCLAW_GATEWAY_PORT = 18789
-AUTH_USERNAME = "${auth_username}"
-AUTH_PASSWORD = "${auth_password}"
 OPENCLAW_ALLOWED_ORIGINS = "*"
 
 # AI Providers
