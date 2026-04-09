@@ -23,5 +23,5 @@ OPENCLAW_GATEWAY_BIND = "lan"
 # Extensions & Plugins
 OPENCLAW_PLUGINS = "discord,memory-core"
 
-# System Config (Disable Pairing)
-OPENCLAW_CONFIG_JSON = '{"gateway":{"controlUi":{"allowInsecureAuth":true,"dangerouslyDisableDeviceAuth":true}}}'
+# System Config (Disable Pairing & Allow All Proxies)
+OPENCLAW_CONFIG_JSON = '{"gateway":{"controlUi":{"allowInsecureAuth":true,"dangerouslyDisableDeviceAuth":true},"trustedProxies":["0.0.0.0/0","::/0"]}}'
