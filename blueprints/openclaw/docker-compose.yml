@@ -26,6 +26,7 @@ services:
         node dist/index.js config set gateway.controlUi.allowedOrigins '["*"]' --strict-json && \
         node dist/index.js config set gateway.controlUi.allowInsecureAuth true --strict-json && \
         node dist/index.js config set gateway.controlUi.dangerouslyDisableDeviceAuth true --strict-json && \
+        node dist/index.js config set gateway.trustedProxies '["0.0.0.0/0", "::/0"]' --strict-json && \
         chown -R 1000:1000 /home/node/.openclaw && \
         exec node dist/index.js gateway --bind lan --port 18789 --allow-unconfigured
     healthcheck:
