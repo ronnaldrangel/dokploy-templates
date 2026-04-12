@@ -24,4 +24,4 @@ OPENCLAW_GATEWAY_BIND = "lan"
 OPENCLAW_PLUGINS = "discord,memory-core"
 
 # System Config (Disable Pairing & Allow All Proxies)
-OPENCLAW_CONFIG_JSON = '{"gateway":{"controlUi":{"allowInsecureAuth":true,"dangerouslyDisableDeviceAuth":true},"trustedProxies":["0.0.0.0/0","::/0"]}}'
+OPENCLAW_CONFIG_JSON = '{"gateway":{"controlUi":{"allowInsecureAuth":true,"dangerouslyDisableDeviceAuth":true},"trustedProxies":["0.0.0.0/0","::/0"],"nodes":{"allowCommands":["system.notify","system.run","system.run.prepare","system.which","system.execApprovals.get","system.execApprovals.set","canvas.present","canvas.hide","canvas.navigate","canvas.eval","canvas.snapshot","canvas.a2ui.push","canvas.a2ui.reset","screen.capture","screen.list","camera.list","camera.snap"]}}}'
