@@ -125,6 +125,7 @@ services:
       - SERVER_SECRET=${SECRET}
       - DB_URL=postgresql://root@cockroach:26257/defaultdb
       - MONGO_URL=postgresql://root@cockroach:26257/defaultdb
+      - ACCOUNTS_DB_URL=postgresql://root@cockroach:26257/defaultdb
       - TRANSACTOR_URL=ws://transactor:3333;ws${SECURE:+s}://${HOST_ADDRESS}/_transactor
       - STORAGE_CONFIG=s3|${S3_ENDPOINT}?accessKey=${S3_ACCESS_KEY}&secretKey=${S3_SECRET_KEY}&region=${S3_REGION}&rootBucket=${S3_BUCKET}
       - QUEUE_CONFIG=redpanda:9092
