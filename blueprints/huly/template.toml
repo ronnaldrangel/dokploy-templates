@@ -1,6 +1,7 @@
 [variables]
 main_domain = "${domain}"
 huly_secret = "${base64:64}"
+disable_signup = "false"
 smtp_host = ""
 smtp_port = "587"
 smtp_tls_mode = "secure"
@@ -25,6 +26,7 @@ env = [
   "DEFAULT_LANGUAGE=en",
   "LAST_NAME_FIRST=true",
   "SECRET=${huly_secret}",
+  "DISABLE_SIGNUP=${disable_signup}",
   "SMTP_HOST=${smtp_host}",
   "SMTP_PORT=${smtp_port}",
   "SMTP_TLS_MODE=${smtp_tls_mode}",

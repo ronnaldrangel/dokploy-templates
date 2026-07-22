@@ -96,6 +96,7 @@ services:
       - ACCOUNTS_URL=http://localhost:3000
       - ACCOUNT_PORT=3000
       - MAIL_URL=http://mail:8097
+      - DISABLE_SIGNUP=${DISABLE_SIGNUP:-false}
     restart: unless-stopped
 
   workspace:
