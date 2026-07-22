@@ -1,10 +1,21 @@
 [variables]
 main_domain = "${domain}"
 huly_secret = "${base64:64}"
+smtp_host = ""
+smtp_port = "587"
+smtp_tls_mode = "secure"
+smtp_username = ""
+smtp_password = ""
+smtp_from = ""
+s3_bucket = ""
+s3_region = ""
+s3_endpoint = ""
+s3_access_key = ""
+s3_secret_key = ""
 
 [config]
 env = [
-  "HULY_VERSION=v0.6.468",
+  "HULY_VERSION=v0.7.426",
   "DOCKER_NAME=huly",
   "HOST_ADDRESS=${main_domain}",
   "SECURE=",
@@ -14,6 +25,17 @@ env = [
   "DEFAULT_LANGUAGE=en",
   "LAST_NAME_FIRST=true",
   "SECRET=${huly_secret}",
+  "SMTP_HOST=${smtp_host}",
+  "SMTP_PORT=${smtp_port}",
+  "SMTP_TLS_MODE=${smtp_tls_mode}",
+  "SMTP_USERNAME=${smtp_username}",
+  "SMTP_PASSWORD=${smtp_password}",
+  "SMTP_FROM=${smtp_from}",
+  "S3_BUCKET=${s3_bucket}",
+  "S3_REGION=${s3_region}",
+  "S3_ENDPOINT=${s3_endpoint}",
+  "S3_ACCESS_KEY=${s3_access_key}",
+  "S3_SECRET_KEY=${s3_secret_key}",
 ]
 
 [[config.domains]]
