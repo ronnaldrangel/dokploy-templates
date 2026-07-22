@@ -51,6 +51,7 @@ content = """
 server {
     listen 80;
     server_name _;
+    client_max_body_size 500M;
     location / {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
