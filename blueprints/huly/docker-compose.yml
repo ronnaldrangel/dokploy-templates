@@ -158,6 +158,8 @@ services:
       - DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE:-en}
       - LAST_NAME_FIRST=${LAST_NAME_FIRST:-true}
       - DESKTOP_UPDATES_CHANNEL=selfhost
+      - LIVEKIT_WS=${LIVEKIT_HOST}
+      - LIVEKIT_HOST=${LIVEKIT_HOST}
     restart: unless-stopped
 
   fulltext:
