@@ -11,6 +11,9 @@ host = "${main_domain}"
 
 [config.env]
 IMAP_SERVER = "tls://mail.example.com"
+IMAP_PORT = "993"
 SMTP_SERVER = "tls://mail.example.com"
+SMTP_PORT = "587"
 ROUNDCUBEMAIL_URL = "https://${main_domain}"
+
 
