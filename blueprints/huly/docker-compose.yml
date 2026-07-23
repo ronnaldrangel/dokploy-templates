@@ -194,6 +194,22 @@ services:
       - SMTP_USERNAME=${SMTP_USERNAME}
       - SMTP_PASSWORD=${SMTP_PASSWORD}
     restart: unless-stopped
+
+  love:
+
+    image: hardcoreeng/love:${HULY_VERSION}
+    environment:
+      - PORT=8096
+      - SECRET=${SECRET}
+      - DB_URL=postgresql://root@cockroach:26257/defaultdb
+      - MONGO_URL=postgresql://root@cockroach:26257/defaultdb
+      - ACCOUNTS_URL=http://account:3000
+      - STORAGE_CONFIG=s3|${S3_ENDPOINT}?accessKey=${S3_ACCESS_KEY}&secretKey=${S3_SECRET_KEY}&region=${S3_REGION}&rootBucket=${S3_BUCKET}
+      - QUEUE_CONFIG=redpanda:9092
+      - LIVEKIT_HOST=${LIVEKIT_HOST}
+      - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}
+      - LIVEKIT_API_SECRET=${LIVEKIT_API_SECRET}
+    restart: unless-stopped
 volumes:
   db:
   elastic:

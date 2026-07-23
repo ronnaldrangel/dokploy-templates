@@ -13,6 +13,9 @@ s3_region = ""
 s3_endpoint = ""
 s3_access_key = ""
 s3_secret_key = ""
+livekit_host = ""
+livekit_api_key = ""
+livekit_api_secret = ""
 
 [config]
 env = [
@@ -38,6 +41,9 @@ env = [
   "S3_ENDPOINT=${s3_endpoint}",
   "S3_ACCESS_KEY=${s3_access_key}",
   "S3_SECRET_KEY=${s3_secret_key}",
+  "LIVEKIT_HOST=${livekit_host}",
+  "LIVEKIT_API_KEY=${livekit_api_key}",
+  "LIVEKIT_API_SECRET=${livekit_api_secret}",
 ]
 
 [[config.domains]]
@@ -126,6 +132,16 @@ server {
 
         rewrite ^/_stats(/.*)$ $1 break;
         proxy_pass http://stats:4900/;
+    }
+
+    location /_love {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        rewrite ^/_love(/.*)$ $1 break;
+        proxy_pass http://love:8096/;
     }
 } 
 """
