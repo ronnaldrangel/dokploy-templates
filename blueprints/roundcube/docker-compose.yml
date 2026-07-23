@@ -1,13 +1,14 @@
+version: "3.8"
 services:
-  roundcubemail:
+  roundcube:
     image: roundcube/roundcubemail:1.6.9-apache
+    restart: always
     volumes:
       - ./www:/var/www/html
       - ./db/sqlite:/var/roundcube/db
     environment:
       - ROUNDCUBEMAIL_DB_TYPE=sqlite
       - ROUNDCUBEMAIL_SKIN=elastic
-      - ROUNDCUBEMAIL_DEFAULT_HOST=${DEFAULT_HOST}
+      - ROUNDCUBEMAIL_DEFAULT_HOST=${IMAP_SERVER}
       - ROUNDCUBEMAIL_SMTP_SERVER=${SMTP_SERVER}
-
-
+      - ROUNDCUBEMAIL_URL=${ROUNDCUBEMAIL_URL}

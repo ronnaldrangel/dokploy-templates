@@ -5,10 +5,12 @@ main_domain = "${domain}"
 mounts = []
 
 [[config.domains]]
-serviceName = "roundcubemail"
+serviceName = "roundcube"
 port = 80
 host = "${main_domain}"
 
 [config.env]
-DEFAULT_HOST = "tls://mail.example.com"
+IMAP_SERVER = "tls://mail.example.com"
 SMTP_SERVER = "tls://mail.example.com"
+ROUNDCUBEMAIL_URL = "https://${main_domain}"
+
