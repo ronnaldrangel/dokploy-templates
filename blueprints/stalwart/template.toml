@@ -1,9 +1,11 @@
 [variables]
 main_domain = "${domain}"
+admin_password = "${password:16}"
 
 [config]
 env = [
-  "STALWART_PUBLIC_URL=https://${main_domain}"
+  "STALWART_PUBLIC_URL=https://${main_domain}",
+  "STALWART_RECOVERY_ADMIN=admin:${admin_password}"
 ]
 
 [[config.domains]]
