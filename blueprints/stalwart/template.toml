@@ -2,7 +2,11 @@
 main_domain = "${domain}"
 
 [config]
+env = [
+  "STALWART_PUBLIC_URL=https://${main_domain}"
+]
+
 [[config.domains]]
-serviceName = "stalwart-mail"
+serviceName = "stalwart"
 port = 8_080
 host = "${main_domain}"
